@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "HelperBot", "HelperBot\HelperBot.njsproj", "{F95156D6-BB41-4071-A746-1BCBAE9995D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F95156D6-BB41-4071-A746-1BCBAE9995D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F95156D6-BB41-4071-A746-1BCBAE9995D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F95156D6-BB41-4071-A746-1BCBAE9995D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F95156D6-BB41-4071-A746-1BCBAE9995D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F521F4B3-7E01-41E0-8EF1-F49245CFEAC2}
+	EndGlobalSection
+EndGlobal
