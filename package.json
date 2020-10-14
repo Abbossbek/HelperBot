@@ -1,0 +1,12 @@
+{
+  "name": "helper-bot",
+  "version": "0.0.0",
+  "description": "HelperBot",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "telegraf": "^3.38.0"
+  }
+}
