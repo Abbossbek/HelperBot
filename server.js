@@ -11,7 +11,9 @@ bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.command('quiz', (ctx) => 
 	{
 		try {
+			var variants={'А','Б','В','Г','Д','Е'};
 			var array = ctx.message.text.split(/\r?\n/);
+			var javoblar ='';
 			var correct_answer_index = -1;
 			for(var i=2; i<array.length; i++){
 				if(array[i].startsWith('*'))
@@ -19,11 +21,13 @@ bot.command('quiz', (ctx) =>
 					correct_answer_index= (i-2);
 					array[i]=array[i].replace('*','');
 				}
+				javoblar+=variants[i-2]+array[i]+'\n';
 			}
-			ctx.replyWithMarkdown('')
+			
+			ctx.replyWithMarkdown('**Вопрос:\n**'+array[1])
 			ctx.replyWithQuiz(
 			ctx.message.text.split(/\r?\n/)[1],
-			array.slice(2,array.lenght),
+			variants.slice(0,array.length-2),
 			{ is_anonymous: false, correct_option_id: correct_answer_index })
 		}
 		catch (e) {
