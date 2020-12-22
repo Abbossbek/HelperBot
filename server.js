@@ -9,18 +9,26 @@ const bot = new Telegraf(token)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.command('quiz', (ctx) => 
-            {
-            try {
-  ctx.replyWithQuiz(
-    ctx.message.text.split(/\r?\n/)[1],
-    [ctx.message.text.split(/\r?\n/)[2], ctx.message.text.split(/\r?\n/)[3], ctx.message.text.split(/\r?\n/)[4], ctx.message.text.split(/\r?\n/)[5]],
-    { is_anonymous: false, correct_option_id: 0 })
-}
-catch (e) {
-  console.log("entering catch block");
-  console.log(e);
-  console.log("leaving catch block");
-}})
+	{
+		try {
+			string[] array = ctx.message.text.split(/\r?\n/);
+			int correct_answer_index = -1;
+			for(int i=2; i<array.length; i++){
+				ctx.reply(i)
+			}
+			ctx.replyWithMarkdown('')
+			ctx.replyWithQuiz(
+			ctx.message.text.split(/\r?\n/)[1],
+			[ctx.message.text.split(/\r?\n/)[2], ctx.message.text.split(/\r?\n/)[3], ctx.message.text.split(/\r?\n/)[4], ctx.message.text.split(/\r?\n/)[5]],
+			{ is_anonymous: false, correct_option_id: 0 })
+		}
+		catch (e) {
+  			console.log("entering catch block");
+ 			console.log(e);
+  			console.log("leaving catch block");
+		}
+	}
+)
 bot
   .launch()
   .then(() => console.log("Bot Started!"))
