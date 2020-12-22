@@ -24,9 +24,9 @@ bot.command('quiz', (ctx) =>
 				javoblar+=variants[i-2]+array[i]+'\n';
 			}
 			
-			ctx.replyWithMarkdown('**Вопрос:\n**'+array[1])
+			ctx.replyWithMarkdown('**Вопрос:\n**'+array[1]+'\n'+javoblar)
 			ctx.replyWithQuiz(
-			ctx.message.text.split(/\r?\n/)[1],
+			'Варианты:',
 			variants.slice(0,array.length-2),
 			{ is_anonymous: false, correct_option_id: correct_answer_index })
 		}
