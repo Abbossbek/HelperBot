@@ -11,7 +11,7 @@ bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.command('quiz', (ctx) => 
 	{
 		try {
-			string[] array = ctx.message.text.split(/\r?\n/);
+			var array = ctx.message.text.split(/\r?\n/);
 			int correct_answer_index = -1;
 			for(int i=2; i<array.length; i++){
 				ctx.reply(i)
