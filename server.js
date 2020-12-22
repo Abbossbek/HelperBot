@@ -4,7 +4,7 @@ var app = express();
 var token = '1354639458:AAEZlyK3OE-siKDhkXmjFz6AKRJgNTxyQ2k';
 
 const { Telegraf } = require('telegraf')
-
+//[ctx.message.text.split(/\r?\n/)[2], ctx.message.text.split(/\r?\n/)[3], ctx.message.text.split(/\r?\n/)[4], ctx.message.text.split(/\r?\n/)[5]]
 const bot = new Telegraf(token)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
@@ -23,7 +23,7 @@ bot.command('quiz', (ctx) =>
 			ctx.replyWithMarkdown('')
 			ctx.replyWithQuiz(
 			ctx.message.text.split(/\r?\n/)[1],
-			[ctx.message.text.split(/\r?\n/)[2], ctx.message.text.split(/\r?\n/)[3], ctx.message.text.split(/\r?\n/)[4], ctx.message.text.split(/\r?\n/)[5]],
+			array,
 			{ is_anonymous: false, correct_option_id: correct_answer_index })
 		}
 		catch (e) {
