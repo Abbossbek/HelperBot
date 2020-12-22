@@ -21,10 +21,10 @@ bot.command('quiz', (ctx) =>
 					correct_answer_index= (i-2);
 					array[i]=array[i].replace('*','');
 				}
-				javoblar+=variants[i-2]+array[i]+'\n';
+				javoblar+='<b>'+variants[i-2]+') </b><i>'+array[i]+'</i>\n';
 			}
 			
-			ctx.replyWithMarkdown('**Вопрос:\n**'+array[1]+'\n'+javoblar)
+			ctx.replyWithHTML('<b>Вопрос:</b>\n'+array[1]+'\n'+javoblar)
 			ctx.replyWithQuiz(
 			'Варианты:',
 			variants.slice(0,array.length-2),
