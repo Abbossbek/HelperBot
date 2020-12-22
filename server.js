@@ -23,7 +23,7 @@ bot.command('quiz', (ctx) =>
 			ctx.replyWithMarkdown('')
 			ctx.replyWithQuiz(
 			ctx.message.text.split(/\r?\n/)[1],
-			array,
+			array.slice(3,array.lenght),
 			{ is_anonymous: false, correct_option_id: correct_answer_index })
 		}
 		catch (e) {
