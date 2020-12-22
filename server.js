@@ -25,11 +25,11 @@ bot.command('quiz', (ctx) =>
 				javoblar+='<b>'+variants[i-2]+') </b><i>'+array[i]+'</i>\n';
 			}
 			
-			ctx.replyWithHTML('<b>Вопрос:</b>\n'+array[1]+'\n'+javoblar)
+			ctx.replyWithHTML('<b>Вопрос:</b>\n'+array[1]+'\n'+javoblar).then(
 			ctx.replyWithQuiz(
 			'Варианты:',
 			variants.slice(0,array.length-2),
-			{ is_anonymous: false, correct_option_id: correct_answer_index })
+			{ is_anonymous: false, correct_option_id: correct_answer_index }))
 		}
 		catch (e) {
   			console.log("entering catch block");
