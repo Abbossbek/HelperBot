@@ -16,6 +16,7 @@ bot.command('quiz', (ctx) =>
 			var javoblar ='';
 			var correct_answer_index = -1;
 			for(var i=2; i<array.length; i++){
+				array[i]=array[i].trim()
 				if(array[i].startsWith('*'))
 				{
 					correct_answer_index= (i-2);
