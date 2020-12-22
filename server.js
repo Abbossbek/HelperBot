@@ -8,7 +8,16 @@ const { Telegraf } = require('telegraf')
 const bot = new Telegraf(token)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
-bot.hears('hi', (ctx) => ctx.replyWithQuiz('daaa', {'a', 'b'}, {}))
+bot.command('poll', (ctx) =>
+  ctx.replyWithPoll(
+    'Your favorite math constant',
+    ['x', 'e', 'π', 'φ', 'γ'],
+    { is_anonymous: false }
+  )
+)
+bot
+  .launch()
+  .then(() => console.log("Bot Started!"))
 bot.on('sticker', (ctx) => ctx.reply('??'))
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.startPolling()
