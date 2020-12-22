@@ -14,7 +14,8 @@ bot.command('quiz', (ctx) =>
 			var array = ctx.message.text.split(/\r?\n/);
 			var correct_answer_index = -1;
 			for(var i=2; i<array.length; i++){
-				ctx.reply(i)
+				if(array[i].startsWith('*')
+					ctx.reply(i)
 			}
 			ctx.replyWithMarkdown('')
 			ctx.replyWithQuiz(
