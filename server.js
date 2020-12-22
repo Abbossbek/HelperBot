@@ -15,13 +15,13 @@ bot.command('quiz', (ctx) =>
 			var correct_answer_index = -1;
 			for(var i=2; i<array.length; i++){
 				if(array[i].startsWith('*'))
-					ctx.reply(i)
+					correct_answer_index= (i-2);
 			}
 			ctx.replyWithMarkdown('')
 			ctx.replyWithQuiz(
 			ctx.message.text.split(/\r?\n/)[1],
 			[ctx.message.text.split(/\r?\n/)[2], ctx.message.text.split(/\r?\n/)[3], ctx.message.text.split(/\r?\n/)[4], ctx.message.text.split(/\r?\n/)[5]],
-			{ is_anonymous: false, correct_option_id: 0 })
+			{ is_anonymous: false, correct_option_id: correct_answer_index })
 		}
 		catch (e) {
   			console.log("entering catch block");
