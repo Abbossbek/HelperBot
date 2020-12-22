@@ -8,7 +8,8 @@ const { Telegraf } = require('telegraf')
 const bot = new Telegraf(token)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
-bot.command('quiz', (ctx) =>
+bot.command('quiz', (ctx) => 
+            {
             try {
   ctx.replyWithQuiz(
     ctx.message.text.split(/\r?\n/)[1],
@@ -19,9 +20,7 @@ catch (e) {
   console.log("entering catch block");
   console.log(e);
   console.log("leaving catch block");
-})
-  
-)
+}})
 bot
   .launch()
   .then(() => console.log("Bot Started!"))
