@@ -10,8 +10,8 @@ bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.command('quiz', (ctx) =>
   ctx.replyWithQuiz(
-    ctx.message.text.split(",")[0],
-    ['x', 'e', 'π', 'φ', 'γ'],
+    ctx.message.text.split(/\r?\n/)[1],
+    [ctx.message.text.split(/\r?\n/)[2], ctx.message.text.split(/\r?\n/)[3], ctx.message.text.split(/\r?\n/)[4], ctx.message.text.split(/\r?\n/)[5]],
     { is_anonymous: false, correct_option_id: 0 }
   )
 )
