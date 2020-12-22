@@ -10,7 +10,7 @@ bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.command('quiz', (ctx) =>
   ctx.replyWithQuiz(
-    ctx.message.text,
+    ctx.message.text.split(",")[0],
     ['x', 'e', 'π', 'φ', 'γ'],
     { is_anonymous: false, correct_option_id: 0 }
   )
