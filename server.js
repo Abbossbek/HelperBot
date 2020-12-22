@@ -9,10 +9,10 @@ const bot = new Telegraf(token)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.command('poll', (ctx) =>
-  ctx.replyWithPoll(
+  ctx.replyWithQuiz(
     'Your favorite math constant',
     ['x', 'e', 'π', 'φ', 'γ'],
-    { is_anonymous: false }
+    { is_anonymous: false, correct_option_id: 0 }
   )
 )
 bot
