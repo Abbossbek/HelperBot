@@ -11,7 +11,7 @@ bot.help((ctx) => ctx.reply('Send me a sticker'))
 bot.command('quiz', (ctx) => 
 	{
 		try {
-			var variants={'А','Б','В','Г','Д','Е'};
+			var variants=['А','Б','В','Г','Д','Е'];
 			var array = ctx.message.text.split(/\r?\n/);
 			var javoblar ='';
 			var correct_answer_index = -1;
