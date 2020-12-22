@@ -17,7 +17,7 @@ bot.command('quiz', (ctx) =>
 				if(array[i].startsWith('*'))
 				{
 					correct_answer_index= (i-2);
-					i.replace('*','');
+					array[i].replace('*','');
 				}
 			}
 			ctx.replyWithMarkdown('')
