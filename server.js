@@ -15,7 +15,10 @@ bot.command('quiz', (ctx) =>
 			var correct_answer_index = -1;
 			for(var i=2; i<array.length; i++){
 				if(array[i].startsWith('*'))
+				{
 					correct_answer_index= (i-2);
+					i.replace('*','');
+				}
 			}
 			ctx.replyWithMarkdown('')
 			ctx.replyWithQuiz(
