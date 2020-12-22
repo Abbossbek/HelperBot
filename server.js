@@ -17,13 +17,13 @@ bot.command('quiz', (ctx) =>
 				if(array[i].startsWith('*'))
 				{
 					correct_answer_index= (i-2);
-					array[i].replace('*','');
+					array[i].replace("*","");
 				}
 			}
 			ctx.replyWithMarkdown('')
 			ctx.replyWithQuiz(
 			ctx.message.text.split(/\r?\n/)[1],
-			array.slice(3,array.lenght),
+			array.slice(2,array.lenght),
 			{ is_anonymous: false, correct_option_id: correct_answer_index })
 		}
 		catch (e) {
