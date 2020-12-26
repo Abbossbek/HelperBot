@@ -8,7 +8,7 @@ const { Telegraf } = require('telegraf')
 const bot = new Telegraf(token)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
-bot.command('quiz', (ctx) => 
+bot.command('q', (ctx) => 
 	{
 		try {
 			var variants=['А','Б','В','Г','Д','Е'];
