@@ -26,7 +26,7 @@ bot.command('quiz', (ctx) =>
 			}
 			
 			ctx.replyWithHTML('<b>Вопрос:</b>\n'+array[1]+'\n'+javoblar)
-			setTimeOut(()=>{
+			setTimeout(()=>{
 				ctx.replyWithQuiz(
 				'Варианты:',
 				variants.slice(0,array.length-2),
