@@ -58,7 +58,23 @@ app.get('/', function (request, response) {
 }).listen(app.get('port'), function () {
     console.log('App is running, server is listening on port ', app.get('port'));
 });
+
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
+
  app.get('/task', function (request, response) {
     var result = 'Task'
-    response.sendFile("channels.json");
+    readTextFile("/Users/Documents/workspace/test.json", function(text){
+    	result = JSON.parse(text);
+});
+    response.sendFile(result);
 })
