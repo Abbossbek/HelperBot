@@ -60,12 +60,6 @@ app.get('/', function (request, response) {
 });
 
  app.get('/task', function (request, response) {
-  	'use strict';
-
-	const fs = require('fs');
-
-	let rawdata = fs.readFileSync('channels.json');
-	let student = JSON.parse(rawdata);
-	console.log(student);
-    response.send(rawdata);
+  	
+    response.send(require('./channels.json'));
 })
