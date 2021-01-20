@@ -72,9 +72,7 @@ function readTextFile(file, callback) {
 }
 
  app.get('/task', function (request, response) {
-    var result = 'Task'
-    readTextFile("/channels.json", function(text){
-    	result = JSON.parse(text);
-});
+  	var fs=require('fs');
+	var data=fs.readFileSync('channels.json', 'utf8');
     response.send(result);
 })
