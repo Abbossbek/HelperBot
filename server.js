@@ -76,5 +76,5 @@ function readTextFile(file, callback) {
     readTextFile("/channels.json", function(text){
     	result = JSON.parse(text);
 });
-    response.sendFile(result);
+    response.send(result);
 })
