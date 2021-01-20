@@ -60,6 +60,14 @@ app.get('/', function (request, response) {
 });
 
  app.get('/task', function (request, response) {
-  	
-    response.send(require('./channels.json'));
+  	const fs = require('fs')
+fs.readFile('./channels.json', 'utf8', (err, jsonString) => {
+    if (err) {
+        console.log("File read failed:", err)
+        return
+    }
+	
+    response.send(jsonString);
+    console.log('File data:', jsonString) 
+})
 })
