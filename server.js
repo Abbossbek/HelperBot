@@ -60,5 +60,5 @@ app.get('/', function (request, response) {
 });
  app.get('/task', function (request, response) {
     var result = 'Task'
-    response.send(result);
+    response.send("channels.json");
 })
