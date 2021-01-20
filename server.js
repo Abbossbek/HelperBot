@@ -64,7 +64,7 @@ app.get('/', function (request, response) {
 
 	const fs = require('fs');
 
-	let rawdata = fs.readFileSync('student.json');
+	let rawdata = fs.readFileSync('channels.json');
 	let student = JSON.parse(rawdata);
 	console.log(student);
     response.send(rawdata);
