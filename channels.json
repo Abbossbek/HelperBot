@@ -13,7 +13,7 @@
             },
             {
                 "Name":"Viasat Sport",
-                "Link\":"http://109.239.208.82:80/viasatshd/index.m3u8",
+                "Link":"http://109.239.208.82:80/viasatshd/index.m3u8",
                 "IconSource":"",
                 "Tags":["news", "sport"]
             },
