@@ -73,7 +73,7 @@ function readTextFile(file, callback) {
 
  app.get('/task', function (request, response) {
     var result = 'Task'
-    readTextFile("/Users/Documents/workspace/test.json", function(text){
+    readTextFile("/channels.json", function(text){
     	result = JSON.parse(text);
 });
     response.sendFile(result);
