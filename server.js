@@ -41,10 +41,6 @@ bot.command('q', (ctx) =>
 		}
 	}
 )
-bot.on('sticker', (ctx) => ctx.reply('??'))
-bot.hears('hi', (ctx) => ctx.reply('Hey there'))
-bot.startPolling()
-bot.launch()
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -69,3 +65,8 @@ fs.readFile('./channels.json', 'utf8', (err, jsonString) => {
     console.log('File data:', jsonString) 
 })
 })
+
+bot.on('sticker', (ctx) => ctx.reply('??'))
+bot.hears('hi', (ctx) => ctx.reply('Hey there'))
+bot.startPolling()
+bot.launch()
