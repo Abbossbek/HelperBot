@@ -41,9 +41,6 @@ bot.command('q', (ctx) =>
 		}
 	}
 )
-bot
-  .launch()
-  .then(() => console.log("Bot Started!"))
 bot.on('sticker', (ctx) => ctx.reply('??'))
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.startPolling()
