@@ -45,6 +45,7 @@ bot.on('sticker', (ctx) => ctx.reply('??'))
 bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.startPolling()
 bot.launch()
+
 app.set('port', (process.env.PORT || 5000));
 
 //For avoidong Heroku $PORT error
