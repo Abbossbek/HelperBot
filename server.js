@@ -57,17 +57,5 @@ app.get('/', function (request, response) {
     console.log('App is running, server is listening on port ', app.get('port'));
 });
 
- app.get('/task', function (request, response) {
-  	const fs = require('fs')
-fs.readFile('./channels.json', 'utf8', (err, jsonString) => {
-    if (err) {
-        console.log("File read failed:", err)
-        return
-    }
-	
-    response.send(jsonString);
-    console.log('File data:', jsonString) 
-})
-})
 
 
