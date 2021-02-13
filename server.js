@@ -4,7 +4,6 @@ var app = express();
 var token = '1354639458:AAEZlyK3OE-siKDhkXmjFz6AKRJgNTxyQ2k';
 
 const { Telegraf } = require('telegraf')
-//[ctx.message.text.split(/\r?\n/)[2], ctx.message.text.split(/\r?\n/)[3], ctx.message.text.split(/\r?\n/)[4], ctx.message.text.split(/\r?\n/)[5]]
 const bot = new Telegraf(token)
 bot.start((ctx) => ctx.reply('Welcome'))
 bot.help((ctx) => ctx.reply('Send me a sticker'))
@@ -35,9 +34,6 @@ bot.command('q', (ctx) =>
 			
 		}
 		catch (e) {
-  			console.log("entering catch block");
- 			console.log(e);
-  			console.log("leaving catch block");
 		}
 	}
 )
@@ -54,7 +50,6 @@ app.get('/', function (request, response) {
     bot.launch();
     response.send(result);
 }).listen(app.get('port'), function () {
-    console.log('App is running, server is listening on port ', app.get('port'));
 });
 
 
